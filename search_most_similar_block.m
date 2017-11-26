@@ -22,4 +22,3 @@ end
 most_similar_block_position = [index_height, index_width];
 
 end
-
