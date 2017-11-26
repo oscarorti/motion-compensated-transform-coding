@@ -1,4 +1,4 @@
-function [ splitted_image ] = divide_image_in_blocks( image, block_height, block_width )
+function [ splitted_image ] = split_image( image, block_height, block_width )
 % DIVIDE_IMAGE_IN_BLOCKS
 % Returns a cell array with the input image divided into blocks of
 % dimension [block_height, block_width] and the same color space.
