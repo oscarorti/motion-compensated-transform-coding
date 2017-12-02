@@ -4,14 +4,16 @@ function [compensated_image_blocks, compensated_block_positions, mse_block_matri
 video = load_video(filename);
 % video_frames = get_frames(video, 1, Inf);
 video_frames = get_frames(video, 1, 4);
-compensated_block_positions = cell(1,1,1);
+
+% TODO: Preallocate variables!
+
+% TODO: Process frame 1!
 
 for i=2:4
     
-    [compensated_image_blocks, compensated_block_positions(:,:,i), mse_block_matrix] = ... 
+    [compensated_image_blocks(:,:,i), compensated_block_positions(:,:,i), mse_block_matrix(:,:,i)] = ... 
      generate_compensated_image(video_frames(:,:,:,i-1), video_frames(:,:,:,i), 10);
 
 end
 
 end
-
