@@ -1,4 +1,4 @@
-function [ image_dct ] = dct_transform( image )
+function [ image_dct ] = dct_transform(image)
 % DCT_TRANSFORM
 % Computes the DCT transformation from an image in all of it's color space
 % dimensions and returns it.

@@ -1,4 +1,4 @@
-function [ compensated_image_blocks, compensated_block_positions, mse_block_matrix ] = generate_compensated_image( frame1, frame2, mse_threshold )
+function [ compensated_image_blocks, compensated_block_positions, mse_block_matrix ] = generate_compensated_image( frame1, frame2, mse_threshold, DCT )
 % GENERATE_COMPENSATED_IMAGE
 % Generates the compensated image and returns the image_blocks,
 % block_positions and mse_block matrices.
@@ -9,6 +9,15 @@ splitted_frame1 = image_to_blocks( frame1, 8, 8 );
 splitted_frame2 = image_to_blocks( frame2, 8, 8 );
 
 [height, width] = size(splitted_frame2);
+
+if DCT == 1
+   for i2=1:height
+       for j2=1:width
+           dct_frame1{i2,j2} = dct_transform(splitted_frame1{i2,j2});
+           dct_frame2{i2,j2} = dct_transform(splitted_frame2{i2,j2});
+       end
+   end
+end
 
 % Initialize variables
 compensated_image_blocks = cell(height, width);
