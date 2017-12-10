@@ -1,6 +1,5 @@
 function [ image ] = idct_transform( dct_image )
 % IDCT_TRANSFORM
-%
 
 [height, width, color_space_dimension] = size(dct_image);
 image = ones(height, width, color_space_dimension);

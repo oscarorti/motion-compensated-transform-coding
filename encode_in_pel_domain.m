@@ -1,13 +1,11 @@
-%% ENCODE_IN_PEL_DOMAIN 
+%% ENCODE_IN_PEL_DOMAIN
 
 filename = 'Breakout_DeepMind.mp4';
 video = load_video(filename);
 first_frame = 100;
-last_frame = 105;
+last_frame = 110;
 % video_frames = get_frames(video, 1, Inf);
 video_frames = get_frames(video, first_frame, last_frame);
-
-% TODO: Preallocate variables!
 
 for i=2:last_frame-first_frame+1
     
@@ -17,8 +15,7 @@ for i=2:last_frame-first_frame+1
 
 end
 
-clearvars i
-
+clearvars i 
 %% SHOW COMPENSATED IMAGES AND PRINT RESULTS
 
 % bits per pixel (bpp)
