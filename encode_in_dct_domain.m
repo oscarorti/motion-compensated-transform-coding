@@ -20,7 +20,7 @@ for i=2:last_frame-first_frame+1
     compensated_video_dct(:,:,:,i) = blocks_to_image(compensated_image_blocks_pixel(:,:,i));
 end
 
-clearvars i i2 j2 
+clearvars i i2 j2 height width
 %% SHOW COMPENSATED IMAGES AND PRINT RESULTS
 
 % bits per pixel (bpp)
