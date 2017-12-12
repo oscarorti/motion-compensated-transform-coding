@@ -3,7 +3,7 @@
 filename = 'Breakout_DeepMind.mp4';
 video = load_video(filename);
 first_frame = 100;
-last_frame = 110;
+last_frame = 104;
 % video_frames = get_frames(video, 1, Inf);
 video_frames = get_frames(video, first_frame, last_frame);
 

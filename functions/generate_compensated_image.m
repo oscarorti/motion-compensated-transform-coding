@@ -27,7 +27,8 @@ mse_block_matrix = ones(height, width);
 % Generate image_blocks, block_positions and MSE_block matrix
 for i=1:height
     for j=1:width
-        [compensated_image_blocks(i,j), compensated_block_positions{i,j}, mse_block_matrix(i,j)] = search_most_similar_block( splitted_frame2{i,j}, splitted_frame1 );
+        block_indices = [i j];
+        [compensated_image_blocks(i,j), compensated_block_positions{i,j}, mse_block_matrix(i,j)] = search_most_similar_block( splitted_frame2{i,j}, block_indices, splitted_frame1 );
         if mse_block_matrix(i,j) > mse_threshold
             compensated_image_blocks(i,j) = splitted_frame2(i,j);
             compensated_block_positions{i,j} = [-1 -1];
